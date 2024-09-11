@@ -1,0 +1,52 @@
+{
+  "editor.codeActionsOnSave": {
+    // ファイル保存時にESLintの自動修正を実行します
+    // formatOnSaveがtrueだと、保存時にPrettierが実行されるが、ESLintは実行されない。
+    // ESLintの自動修正を実行したい場合は、codeActionsOnSaveを設定する。
+    // https://qiita.com/keitaMax/items/f8af4bb1e7eccfd3bbc9
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "editor.tabSize": 4,
+
+  // エディタの表示領域右端で折り返しをするかどうかの設定
+  // https://atmarkit.itmedia.co.jp/ait/articles/1807/27/news035.html
+  "editor.wordWrap": "on",
+
+  // 制御文字を表示
+  // https://astropengu.in/posts/2/
+  // https://code.visualstudio.com/updates/v1_62#_unicode-directional-formatting-characters
+  "editor.renderControlCharacters": true,
+
+  // フォーマッターを指定
+  // ここではPrettierをフォーマッターとして指定
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // ファイル保存時に自動でフォーマットを実行
+  // formatOnSaveがtrueだと、保存時にPrettierが実行されるが、ESLintは実行されない。
+  // ESLintの自動修正を実行したい場合は、codeActionsOnSaveを設定する。
+  "editor.formatOnSave": false,
+
+  // ESLint を実行するノード ランタイムのパスを設定
+  "eslint.runtime": "node",
+
+  // Prettierでコードフォーマットさせないファイルパスが記載されているファイルを指定
+  "prettier.ignorePath": ".gitignore",
+
+  // TailwindCSSの補完対象を正規表現で指定
+  // https://zenn.dev/shon0/articles/2aa72060fb824d
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+
+  // TailwindCSSの設定ファイルを指定
+  // https://qiita.com/tanimoto-hikari/items/0b188634b411eafe1c37
+  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+
+  // IntelliSenseのTypeScriptを使用する場合、ユーザーへ確認するように設定
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // TypeScriptのバージョンとして、プロジェクトのnode_modulesディレクトリにインストールされたものを使用
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
