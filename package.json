@@ -6,7 +6,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "clean": "git clean -xdf .cache .expo android ios node_modules"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
