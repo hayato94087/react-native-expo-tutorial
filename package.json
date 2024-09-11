@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "clean": "git clean -xdf .cache .expo android ios node_modules",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint ."
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
