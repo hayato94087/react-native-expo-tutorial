@@ -6,6 +6,7 @@ import { StatusBar } from "expo-status-bar";
 
 import { Button } from "@/components/button";
 import { CircleButton } from "@/components/circle-button";
+import { EmojiPicker } from "@/components/emoji-picker";
 import { IconButton } from "@/components/icon-button";
 import { ImageViewer } from "@/components/image-viewer";
 
@@ -15,13 +16,18 @@ const PlaceholderImage =
 const App: FC = () => {
   const [selectedImage, setSelectedImage] = useState<null | string>(null);
   const [showAppOptions, setShowAppOptions] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const onModalClose = () => {
+    setIsModalVisible(false);
+  };
 
   const onReset = () => {
     setShowAppOptions(false);
   };
 
   const onAddSticker = () => {
-    // 後ほど追加します
+    setIsModalVisible(true);
   };
 
   const onSaveImageAsync = async () => {
@@ -50,6 +56,10 @@ const App: FC = () => {
           selectedImage={selectedImage}
         />
       </View>
+      <EmojiPicker
+        isVisible={isModalVisible}
+        onClose={onModalClose}
+      ></EmojiPicker>
       {showAppOptions ? (
         <View style={styles.optionsContainer}>
           <View style={styles.optionsRow}>
